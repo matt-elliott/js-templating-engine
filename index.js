@@ -42,7 +42,11 @@
     window.templateNumber = parseInt(filename.replace('template', '')) - 1;
     let html = replaceVars(varsToReplace, file, filename);
     
-    view.innerHTML = html;
+    view.classList = '';
+    setTimeout( () => {
+      view.innerHTML = html;
+      view.classList = 'active';
+    }, 500)
   }
 
   function replaceVars(vars,file) {
